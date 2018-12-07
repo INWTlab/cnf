@@ -1,0 +1,11 @@
+Package: config
+Title: Manage Configuration Files
+Version: 0.0.1
+Authors@R: person("Sebastian", "Warnholz", email = "sebastian.warnholz@inwt-statistics.de", role = c("aut", "cre"))
+Copyright: INWT Statistics GmbH
+Description: Tools to manage configuration files.
+Depends: R (>= 3.5.1)
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Suggests: testthat
