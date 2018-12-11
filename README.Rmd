@@ -32,10 +32,10 @@ password <- "pwd"
 ...
 ```
 
-Now the question is, how do you make these settings to your R project. `config`
-provides the following mechanisms:
+Now the question is, how do you make these available settings to your R project.
+`config` provides the following mechanisms:
 
-- `register`: Register a configuration file. It adds to a list of config files.
+- `register`: Register a configuration file. It adds to a list of configurations.
 - `get`: get the value of a config. It is always a `list` returned with the
 values in the config as elements.
 - `store`: a *store* of all registered configurations.
@@ -53,7 +53,7 @@ added to the store to 'generate' the config. Using this function we can override
 or add elements in the config, or just retrieve the values as they are. This can
 be useful in development and debugging sessions.
 
-One more things you may have recognised: The name *config* has been deduced from
+One more thing you may have recognised: The name *config* has been deduced from
 the filepath. By default we use the filename provided without the file extension
 and after stripping the leading dot. If you name all your configuration files
 `~/.project/config.R`, this is a bit ambiguous. Instead you can and should give
@@ -92,8 +92,7 @@ are doomed, go and write a package!
     projA = "pathA/config.R",
     projB = "pathB/config.R",
     maybe = TRUE,
-    envOverride = TRUE,
-    quite = TRUE,
+    quiet = TRUE,
     warn = FALSE
   )
 }
@@ -101,16 +100,10 @@ are doomed, go and write a package!
 
 - `maybe` allows this call to fail, but will print a message. This is important
 when we install a package and have no configuration, yet.
-- `envOverride` allows all values to be overridden by the environment.
-   - First we check if an environment variable `CONFIG_PROJA` exists. Then we
-   use that variable.
-   - Then we check for a config file named `CONFIG_PROJA.R` in the current
-   working directory.
-   - Only then do we check "pathA/config.R".
-- `quite` suppresses all warnings and messages.
+- `quiet` suppresses all warnings and messages.
 - `warn` turns warnings into messages.
 
-For some reason we sometimes have configuration in our packages, as R code and
+For some reason we sometimes have configuration in our packages. As R code and
 in version control. We can register them as configuration, preferably as load
 hook:
 
@@ -123,18 +116,22 @@ hook:
 ```
 
 In this case `configObject` is a list. We can go wild and provide a
-fallback/default configuration and allow for override by a file:
+fallback/default configuration and allow for override by a file or environment
+variable:
 
 ```{r}
 .onLoad <- function(libname, pkgname) {
   config::register(
     config = configObject,
     config = "~/.config.R",
+    config = Sys.getenv("CONFIG"),
     maybe = TRUE
   )
 }
 ```
 
-Hope you see some benefits in this list of features.
+Using this pattern, we can override the configuration, or parts of it, by an
+environment variable or config file. But it is optional. The file path in the
+environment variable has highest priority.
 
 Happy coding...
