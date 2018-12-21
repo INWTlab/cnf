@@ -32,7 +32,7 @@ password <- "pwd"
 ...
 ```
 
-Now the question is, how do you make these available settings to your R project.
+Now the question is, how do you make these settings available to your R project.
 `config` provides the following mechanisms:
 
 - `register`: Register a configuration file. It adds to a list of configurations.
