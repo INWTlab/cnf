@@ -1,11 +1,12 @@
-Package: config
-Title: Manage Configuration Files
+Package: cnf
+Title: Configuration for R Projects
 Version: 0.0.1
 Authors@R: person("Sebastian", "Warnholz", email = "sebastian.warnholz@inwt-statistics.de", role = c("aut", "cre"))
 Copyright: INWT Statistics GmbH
 Description: Tools to manage configuration files.
-Depends: R (>= 3.5.1)
+Depends: R (>= 3.5.0)
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Suggests: testthat
+RoxygenNote: 6.1.0
