@@ -2,11 +2,33 @@
 % Please edit documentation in R/register.R
 \name{register}
 \alias{register}
-\title{Register new configuration}
+\title{Register a configuration}
 \usage{
 register(..., maybe = FALSE, warn = TRUE, quiet = FALSE,
   where = NULL)
 }
+\arguments{
+\item{...}{(character|list) named arguments. Character are interpreted as
+files. List objects are used as they are.}
+
+\item{maybe}{(logical) If TRUE then loading a config file can fail. A warning
+is raised.}
+
+\item{warn}{(logical) If FALSE convert all warnings into messages.}
+
+\item{quiet}{(logical) Suppress all warnings and messages.}
+
+\item{where}{(environment) The environment used to store the configs.}
+}
 \description{
-Register new configuration
+Register a configuration.
+}
+\examples{
+file <- tempfile(fileext = "R")
+writeLines("x<-2\\ny<-1", file)
+cnf::register(config = list(x = 1))
+cnf::getcnf("config")
+cnf::register(config = file, warn = FALSE)
+cnf::getcnf("config")
+
 }

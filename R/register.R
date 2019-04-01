@@ -1,4 +1,22 @@
-#' Register new configuration
+#' Register a configuration
+#'
+#' Register a configuration.
+#'
+#' @param ... (character|list) named arguments. Character are interpreted as
+#'   files. List objects are used as they are.
+#' @param maybe (logical) If TRUE then loading a config file can fail. A warning
+#'   is raised.
+#' @param warn (logical) If FALSE convert all warnings into messages.
+#' @param quiet (logical) Suppress all warnings and messages.
+#' @param where (environment) The environment used to store the configs.
+#'
+#' @examples
+#' file <- tempfile(fileext = "R")
+#' writeLines("x<-2\ny<-1", file)
+#' cnf::register(config = list(x = 1))
+#' cnf::getcnf("config")
+#' cnf::register(config = file, warn = FALSE)
+#' cnf::getcnf("config")
 #'
 #' @export
 register <- function(..., maybe = FALSE, warn = TRUE, quiet = FALSE, where = NULL) {

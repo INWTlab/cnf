@@ -6,6 +6,15 @@
 \usage{
 getcnf(name, where = NULL)
 }
+\arguments{
+\item{name}{(character) the name of the config}
+
+\item{where}{(NULL|environment) where to look for the configuration}
+}
 \description{
-Get configuration
+Get a registered configuration.
+}
+\examples{
+cnf::register(config = list(x = 1))
+cnf::getcnf("config")
 }
