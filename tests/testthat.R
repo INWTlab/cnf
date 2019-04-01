@@ -1,4 +1,4 @@
 library(testthat)
-library(config)
+library(cnf)
 
-test_check("config")
+test_check("cnf")
