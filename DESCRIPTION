@@ -1,6 +1,6 @@
 Package: cnf
 Title: Configuration for R Projects
-Version: 0.0.1
+Version: 0.1.0
 Authors@R: person("Sebastian", "Warnholz", email = "sebastian.warnholz@inwt-statistics.de", role = c("aut", "cre"))
 Copyright: INWT Statistics GmbH
 Description: Tools to manage configuration files.
@@ -8,7 +8,7 @@ Depends: R (>= 3.5.0)
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-Suggests: 
+Suggests:
     testthat,
     covr
 RoxygenNote: 6.1.1
