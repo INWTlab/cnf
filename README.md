@@ -1,9 +1,9 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 [![Travis build
-status](https://travis-ci.org/INWTlab/config.svg?branch=master)](https://travis-ci.org/INWTlab/config)
+status](https://travis-ci.org/INWTlab/cnf.svg?branch=master)](https://travis-ci.org/INWTlab/cnf)
 [![Coverage
-status](https://codecov.io/gh/INWTlab/config/branch/master/graph/badge.svg)](https://codecov.io/github/INWTlab/config?branch=master)
+status](https://codecov.io/gh/INWTlab/cnf/branch/master/graph/badge.svg)](https://codecov.io/github/INWTlab/cnf?branch=master)
 
 # cnf
 
