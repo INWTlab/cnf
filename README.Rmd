@@ -1,7 +1,7 @@
 ---
 output:
   md_document:
-    variant: markdown_github
+    variant: gfm
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -36,19 +36,19 @@ Now the question is, how do you make these settings available to your R project.
 `cnf` provides the following mechanisms:
 
 - `register`: Register a configuration file. It adds to a list of configurations.
-- `get`: get the value of a config. It is always a `list` returned with the
+- `getcnf`: get the value of a config. It is always a `list` returned with the
 values in the config as elements.
 
 ```{r}
 cnf::register(config = "~/.config.R")
-cnf::get("config")
+cnf::getcnf("config")
 ```
 
 With `get` we get the config for a given name. You can and should give project
 specific names to rule out name clashes between them:
 
 ```{r}
-cnf:register(
+cnf::register(
   projA = "pathA/config.R",
   projB = "pathB/config.R"
 )
@@ -57,8 +57,8 @@ cnf:register(
 We now have access to these configs using:
 
 ```{r}
-cnf::get("projA")
-cnf::get("projB")
+cnf::getcnf("projA")
+cnf::getcnf("projB")
 ```
 
 Note that we can override configurations using this approach; simply by using
@@ -74,7 +74,7 @@ are doomed, go and write a package!
 
 ```{r}
 .onLoad <- function(libname, pkgname) {
-  cnf:register(
+  cnf::register(
     projA = "pathA/config.R",
     projB = "pathB/config.R",
     maybe = TRUE,
