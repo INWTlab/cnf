@@ -37,7 +37,7 @@ cnf::register(config = "~/.config.R")
 cnf::getcnf("config")
 ```
 
-With `get` we get the config for a given name. You can and should give
+With `getcnf` we get the config for a given name. You can and should give
 project specific names to rule out name clashes between them:
 
 ``` r
