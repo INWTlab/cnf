@@ -14,7 +14,7 @@ Tools to manage configuration files in R projects.
 Assume you have a configuration file located at `~/.config.R`. It may
 look something like:
 
-**~/.cnf.R**
+**~/.config.R**
 
 ``` r
 user = "user"
