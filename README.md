@@ -14,7 +14,7 @@ Tools to manage configuration files in R projects.
 Assume you have a configuration file located at `~/.config.R`. It may
 look something like:
 
-**~/.cnf.R**
+**~/.config.R**
 
 ``` r
 user = "user"
@@ -37,7 +37,7 @@ cnf::register(config = "~/.config.R")
 cnf::getcnf("config")
 ```
 
-With `get` we get the config for a given name. You can and should give
+With `getcnf` we get the config for a given name. You can and should give
 project specific names to rule out name clashes between them:
 
 ``` r
